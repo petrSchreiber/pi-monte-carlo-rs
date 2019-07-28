@@ -62,21 +62,21 @@ mod tests {
     fn belongs_unit_circle_for_inside_point() {
         let point_inside = Point2D { x: 0.0, y: 0.0 };
 
-        assert!(belongs_unit_circle(&point_inside) == true);
+        assert!(belongs_unit_circle(&point_inside));
     }
 
     #[test]
     fn belongs_unit_circle_for_outside_point() {
         let point_outside = Point2D { x: 2.0, y: 0.0 };
 
-        assert!(belongs_unit_circle(&point_outside) == false);
+        assert!(!belongs_unit_circle(&point_outside));
     }
 
     #[test]
     fn belongs_unit_circle_for_edge_point() {
         let point_on_the_edge = Point2D { x: 1.0, y: 0.0 };
 
-        assert!(belongs_unit_circle(&point_on_the_edge) == true);
+        assert!(belongs_unit_circle(&point_on_the_edge));
     }
 
 }
