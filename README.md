@@ -1,4 +1,6 @@
 # Pi approximation via Monte Carlo
+[![Build Status](https://travis-ci.com/petrSchreiber/pi-monte-carlo-rs.svg?branch=master)](https://travis-ci.com/petrSchreiber/pi-monte-carlo-rs)
+
 _Educational project_
 
 The main target of the project is to try to use Rust for Monte Carlo approximation of Pi and measure how long does it take for inexperienced Rustacean.
