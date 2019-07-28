@@ -1,4 +1,6 @@
 use rand::Rng;
+use std::env;
+use std::process::exit;
 
 struct Point2D {
     pub x: f64,
@@ -27,10 +29,27 @@ fn approximate_pi(max_point: u64) -> f64 {
         "{} points in circle out of {} total points.",
         points_in_circle, max_point
     );
-
+    
     4.0f64 * f64::from(points_in_circle) / max_point as f64
 }
 
 fn main() {
-    println!("{}", approximate_pi(10000));
+    let args: Vec<String> = env::args().collect();
+
+    let max_points = if args.len() == 2 {
+        match args[1].parse::<u64>() {
+            Ok(v) => v,
+            Err(_v) => {
+                println!("Could not parse passed argument as u64");
+                exit(1)
+            }
+        }
+    } else {
+        let default_points = 1000;
+        println!("Using default amount of points: {}", default_points);
+
+        default_points
+    };
+
+    println!("{}", approximate_pi(max_points));
 }
