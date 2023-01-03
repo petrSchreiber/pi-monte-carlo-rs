@@ -17,8 +17,8 @@ fn approximate_pi(max_point: u64) -> f64 {
 
     for _ in 0..max_point {
         let point = Point2D {
-            x: rng.gen_range(0.0, 1.0),
-            y: rng.gen_range(0.0, 1.0),
+            x: rng.gen_range(0.0..1.0),
+            y: rng.gen_range(0.0..1.0),
         };
 
         if belongs_unit_circle(&point) {
